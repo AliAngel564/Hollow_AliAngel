@@ -9,7 +9,11 @@ using UnityEngine;
 public class movementPlayer : MonoBehaviour
 {
     //Variables
+    public float numero = 0f;
+    private int vidaPersonaje = 0;
+   
 
+    /* */
 
     //Donde empieza el frame 1. Frame 2 dejó de llamarse
     void Start()
@@ -24,6 +28,10 @@ public class movementPlayer : MonoBehaviour
     {
         print("miau update inicia aqui miau");
 
+        if( vidaPersonaje == 0) 
+        {
+            print("TE MORITES");
+        }
     }
 
     //Tasa fija de Frames   
