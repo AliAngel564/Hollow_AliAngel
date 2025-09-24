@@ -1780,6 +1780,32 @@ MonoBehaviour:
         isBuiltIn: 1
         script: {fileID: 0}
         hasToggle: 1
+      - displayName: GamepadExample
+        name: DocCodeSamples.Tests.GamepadExample, Unity.InputSystem.DocCodeSamples,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: GamepadHapticsExample
+        name: DocCodeSamples.Tests.GamepadHapticsExample, Unity.InputSystem.DocCodeSamples,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
       - displayName: GameViewEventCatcher
         name: UnityEngine.Rendering.MousePositionDebug+GameViewEventCatcher, Unity.RenderPipelines.Core.Runtime,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -2014,6 +2040,32 @@ MonoBehaviour:
         isBuiltIn: 1
         script: {fileID: 0}
         hasToggle: 0
+      - displayName: OnScreenButton
+        name: UnityEngine.InputSystem.OnScreen.OnScreenButton, Unity.InputSystem,
+          Version=1.14.2.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: OnScreenStick
+        name: UnityEngine.InputSystem.OnScreen.OnScreenStick, Unity.InputSystem,
+          Version=1.14.2.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
       - displayName: ParticleSystem
         name: UnityEngine.ParticleSystem, UnityEngine.ParticleSystemModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -2069,6 +2121,32 @@ MonoBehaviour:
       - displayName: PlayableDirector
         name: UnityEngine.Playables.PlayableDirector, UnityEngine.DirectorModule,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: PlayerInput
+        name: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem, Version=1.14.2.0,
+          Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: PlayerInputManager
+        name: UnityEngine.InputSystem.PlayerInputManager, Unity.InputSystem, Version=1.14.2.0,
+          Culture=neutral, PublicKeyToken=null
         content:
           m_Text: 
           m_Image: {fileID: 0}
@@ -2393,6 +2471,32 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: TMP_ScrollbarEventHandler
         name: TMPro.TMP_ScrollbarEventHandler, Unity.TextMeshPro, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: TouchSimulation
+        name: UnityEngine.InputSystem.EnhancedTouch.TouchSimulation, Unity.InputSystem,
+          Version=1.14.2.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: TrackedPoseDriver
+        name: UnityEngine.InputSystem.XR.TrackedPoseDriver, Unity.InputSystem, Version=1.14.2.0,
           Culture=neutral, PublicKeyToken=null
         content:
           m_Text: 
@@ -3054,6 +3158,19 @@ MonoBehaviour:
         isBuiltIn: 1
         script: {fileID: 0}
         hasToggle: 1
+      - displayName: VirtualMouseInput
+        name: UnityEngine.InputSystem.UI.VirtualMouseInput, Unity.InputSystem, Version=1.14.2.0,
+          Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
       - displayName: VisualEffect
         name: UnityEngine.VFX.VisualEffect, UnityEngine.VFXModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -3110,6 +3227,19 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: BaseInput
         name: UnityEngine.EventSystems.BaseInput, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: BaseInputOverride
+        name: UnityEngine.InputSystem.UI.BaseInputOverride, Unity.InputSystem, Version=1.14.2.0,
           Culture=neutral, PublicKeyToken=null
         content:
           m_Text: 
@@ -3316,6 +3446,19 @@ MonoBehaviour:
         isBuiltIn: 1
         script: {fileID: 0}
         hasToggle: 1
+      - displayName: InputSystemUIInputModule
+        name: UnityEngine.InputSystem.UI.InputSystemUIInputModule, Unity.InputSystem,
+          Version=1.14.2.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
       - displayName: LayoutElement
         name: UnityEngine.UI.LayoutElement, UnityEngine.UI, Version=1.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -3345,6 +3488,19 @@ MonoBehaviour:
       - displayName: MonoBehaviour
         name: UnityEngine.MonoBehaviour, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: MultiplayerEventSystem
+        name: UnityEngine.InputSystem.UI.MultiplayerEventSystem, Unity.InputSystem,
+          Version=1.14.2.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: 
           m_Image: {fileID: 0}
@@ -3605,6 +3761,19 @@ MonoBehaviour:
       - displayName: TouchInputModule
         name: UnityEngine.EventSystems.TouchInputModule, UnityEngine.UI, Version=1.0.0.0,
           Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: 
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+          m_TextWithWhitespace: 
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: TrackedDeviceRaycaster
+        name: UnityEngine.InputSystem.UI.TrackedDeviceRaycaster, Unity.InputSystem,
+          Version=1.14.2.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: 
           m_Image: {fileID: 0}
@@ -4404,5 +4573,5 @@ MonoBehaviour:
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
         hasToggle: 1
-    unityVersion: 6000.0.56f1
-    unityCount: 306
+    unityVersion: 6000.0.57f1
+    unityCount: 319
