@@ -1,29 +1,65 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class crawlidBehaviour : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 2f;
-    private Rigidbody2D crawlidRB;
-    private BoxCollider2D crawlidCollider;
-    private Transform crawlidTransform;
+    [Header("Movimiento")]
+    [SerializeField]
+    private float speed = 2f;
+    public bool movingRight = true;
+    [Header("Detección")]
+    public Transform groundCheck;
+    public Transform wallCheck;
+    public float checkDistanceX = 1f;
+    public float checkDistanceY = 1.5f;
+    private float groundCheckPositionX;
+    public LayerMask layerMaskWall;
 
-   
-    void Start()
+    Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
+
+    //
+    void Awake()
     {
-        crawlidRB = GetComponent<Rigidbody2D>();
-        crawlidCollider = GetComponent<BoxCollider2D>();
-        crawlidTransform = GetComponent<Transform>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
-        crawlidRB.AddForceAtPosition(Vector2.right, crawlidTransform.position);
+        groundCheckPositionX = groundCheck.transform.localScale.x;
+        // Operador ternario para dirección, primer valor si es true, segundo si es false
+        float moveDir = movingRight ? 1f : -1f;
+        rb.linearVelocity = new Vector2(moveDir * speed, rb.linearVelocity.y);
+
+        // Detectar pared y falta de suelo
+        bool hitWall = Physics2D.Raycast(wallCheck.position, movingRight ? Vector2.right : Vector2.left, checkDistanceX, layerMaskWall);
+        bool noGround = !Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistanceY, layerMaskWall);
+
+        // Cambiar dirección
+        if (hitWall || noGround)
+        {
+            Flip();
+            
+        }
     }
 
-    
-       
+    private void Update()
+    {
+        // Debug Rays
+        Debug.DrawRay(wallCheck.position, (movingRight ? Vector2.right : Vector2.left) * checkDistanceX, Color.red);
+        //CircleCast
+        Debug.DrawRay(groundCheck.position, Vector2.down * checkDistanceY, Color.cyan);
 
+    }
 
+    void Flip()
+    {
+        Debug.Log("Flip");
+        //rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Detener el movimiento horizontal antes de girar
+        movingRight = !movingRight;
+        // Invierte solo el sprite (no el transform completo)
+        spriteRenderer.flipX = true;
+        wallCheck.transform.localScale = new Vector2(-wallCheck.localScale.x, wallCheck.localScale.y);
+    }
 }
