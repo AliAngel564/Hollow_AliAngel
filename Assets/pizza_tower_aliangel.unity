@@ -1062,7 +1062,7 @@ Transform:
   m_GameObject: {fileID: 117054406}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6343.23, y: 1530.8, z: 0}
+  m_LocalPosition: {x: 6345.48, y: 1530.99, z: 0}
   m_LocalScale: {x: 1.0197058, y: 0.49099997, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13541,6 +13541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crawlid - atlas0 #0070052_8 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6883229972612740922, guid: d0173bc6cda260541a8fc8ef92174c8f, type: 3}
+      propertyPath: knockbackForce
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15422,6 +15426,10 @@ PrefabInstance:
     - target: {fileID: 930433680303292960, guid: 6418d185270a35e4c9b3fb5dabd1f5cc, type: 3}
       propertyPath: m_Name
       value: Vengefly - atlas0 #0070061_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190170593791153028, guid: 6418d185270a35e4c9b3fb5dabd1f5cc, type: 3}
+      propertyPath: knockbackForce
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6639377971776235231, guid: 6418d185270a35e4c9b3fb5dabd1f5cc, type: 3}
       propertyPath: m_LocalPosition.x

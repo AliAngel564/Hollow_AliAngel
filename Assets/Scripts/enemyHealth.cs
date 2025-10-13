@@ -5,6 +5,7 @@ public class enemyHealth : MonoBehaviour
 {
     public GameObject geoCoin;
     public ParticleSystem deathParticle;
+    public ContactPoint2D contactPoint;
     Transform vengeFlyTransform;
     Rigidbody2D vengeFlyRigidbody2D;
     [SerializeField]private int health, maxHealth = 3;
@@ -48,6 +49,6 @@ public class enemyHealth : MonoBehaviour
 
     private void Knockback()
     {
-        vengeFlyRigidbody2D.AddForce(-vengeFlyTransform.right *knockbackForce, ForceMode2D.Impulse);
+        vengeFlyRigidbody2D.AddForce(-vengeFlyTransform.right *knockbackForce,ForceMode2D.Impulse);
     }
 }
