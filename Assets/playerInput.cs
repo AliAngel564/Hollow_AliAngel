@@ -72,7 +72,7 @@ using UnityEngine.InputSystem.Utilities;
 /// }
 /// </code>
 /// </example>
-public partial class @PlayerInput: IInputActionCollection2, IDisposable
+public partial class @playerInput: IInputActionCollection2, IDisposable
 {
     /// <summary>
     /// Provides access to the underlying asset instance.
@@ -82,7 +82,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     /// <summary>
     /// Constructs a new instance.
     /// </summary>
-    public @PlayerInput()
+    public @playerInput()
     {
         asset = InputActionAsset.FromJson(@"{
     ""version"": 1,
@@ -109,6 +109,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""06b23d80-4cb6-4370-8ea7-f8cf926a2dbf"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -177,6 +186,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74d852a2-95ab-4529-9f7d-f9d5c7928dd0"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,11 +207,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_movement = m_Player.FindAction("movement", throwIfNotFound: true);
         m_Player_jump = m_Player.FindAction("jump", throwIfNotFound: true);
+        m_Player_attack = m_Player.FindAction("attack", throwIfNotFound: true);
     }
 
-    ~@PlayerInput()
+    ~@playerInput()
     {
-        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, PlayerInput.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, playerInput.Player.Disable() has not been called.");
     }
 
     /// <summary>
@@ -269,17 +290,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_movement;
     private readonly InputAction m_Player_jump;
+    private readonly InputAction m_Player_attack;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
     public struct PlayerActions
     {
-        private @PlayerInput m_Wrapper;
+        private @playerInput m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public PlayerActions(@playerInput wrapper) { m_Wrapper = wrapper; }
         /// <summary>
         /// Provides access to the underlying input action "Player/movement".
         /// </summary>
@@ -288,6 +310,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/jump".
         /// </summary>
         public InputAction @jump => m_Wrapper.m_Player_jump;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/attack".
+        /// </summary>
+        public InputAction @attack => m_Wrapper.m_Player_attack;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -320,6 +346,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @jump.started += instance.OnJump;
             @jump.performed += instance.OnJump;
             @jump.canceled += instance.OnJump;
+            @attack.started += instance.OnAttack;
+            @attack.performed += instance.OnAttack;
+            @attack.canceled += instance.OnAttack;
         }
 
         /// <summary>
@@ -337,6 +366,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @jump.started -= instance.OnJump;
             @jump.performed -= instance.OnJump;
             @jump.canceled -= instance.OnJump;
+            @attack.started -= instance.OnAttack;
+            @attack.performed -= instance.OnAttack;
+            @attack.canceled -= instance.OnAttack;
         }
 
         /// <summary>
@@ -391,5 +423,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnJump(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "attack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

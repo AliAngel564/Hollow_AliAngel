@@ -1,18 +1,14 @@
+using System;
 using UnityEngine;
 
 public class vengeFlyBehaviour : MonoBehaviour
 {
+    
     bool followingPlayer = false;
     Vector2 playerPosition;
     public float moveSpeed = 0.5f;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    private int health = 2;
+    
     private void FixedUpdate()
     {
         followPlayer();
@@ -47,4 +43,5 @@ public class vengeFlyBehaviour : MonoBehaviour
     {
         followingPlayer = false;
     }
+    
 }

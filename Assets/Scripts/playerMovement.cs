@@ -3,24 +3,30 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    private PlayerInput input;
+    private playerInput input;
 
     public float movementSpeed;
     public float jumpStrenght;
     public bool touchingGrass;
 
     public Rigidbody2D rb;
+    private Transform playerTransform;
     public SpriteRenderer spriteRenderer;
     [SerializeField] private Animator _animator;
 
     private Vector2 _moveDirection;
+    private Vector2 lookLeft;
+    private Vector2 lookRight;
     
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
-        input = new PlayerInput();
+        playerTransform = GetComponent<Transform>();
+        input = new playerInput();
+        lookLeft = new Vector2(-playerTransform.localScale.x, playerTransform.localScale.y);
+        lookRight = new Vector2(playerTransform.localScale.x, playerTransform.localScale.y);
     }
 
     private void OnEnable()
@@ -43,7 +49,7 @@ public class playerMovement : MonoBehaviour
 
     }
 
-    //No es lo más optimo pero funciona por ahora para arreglar la caida infinita
+    //No es lo mï¿½s optimo pero funciona por ahora para arreglar la caida infinita
     private void OnCollisionStay2D(Collision2D collision)
     {
         _animator.SetBool("isGrounded", true);
@@ -78,11 +84,11 @@ public class playerMovement : MonoBehaviour
         }
         if (_moveDirection.x == -1)
         {
-            spriteRenderer.flipX = true;
+            playerTransform.localScale = lookLeft;
         }
         else if (_moveDirection.x == 1)
         {
-            spriteRenderer.flipX = false;
+            playerTransform.localScale = lookRight;
         }
 
     }
